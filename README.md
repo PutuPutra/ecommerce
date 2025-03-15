@@ -10,10 +10,6 @@
 | Authentication | Auth.js, Google Auth, Magic Link |
 | Others         | uploadthing, resend, zod, etc    |
 
-[![Next.js MongoDB Amazona](/public/images/app.png)](https://next-mongo-ecommerce-final.vercel.app/)
-
-https://next-mongo-ecommerce-final.vercel.app/
-
 ## What you will learn
 
 - creating e-commerce website pages by next.js server components
