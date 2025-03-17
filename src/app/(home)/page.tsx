@@ -11,6 +11,7 @@ import ProductSlider from "@/components/shared/product/product-slider";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default async function Page() {
+  const bestSellingProducts = await getProductsByTag({ tag: "best-seller" });
   const todaysDeals = await getProductsByTag({ tag: "todays-deal" });
   const categories = (await getAllCategories()).slice(0, 4);
   const newArrivals = await getProductsForCard({
@@ -72,6 +73,15 @@ export default async function Page() {
         <Card className="w-full rounded-none">
           <CardContent className="p-4 items-center gap-3">
             <ProductSlider title={"Today's Deals"} products={todaysDeals} />
+          </CardContent>
+        </Card>
+        <Card className="w-full rounded-none">
+          <CardContent className="p-4 items-center gap-3">
+            <ProductSlider
+              title="Best Selling Products"
+              products={bestSellingProducts}
+              hideDetails
+            />
           </CardContent>
         </Card>
       </div>
