@@ -1,8 +1,8 @@
 "use server";
 
 import { connectToDatabase } from "@/lib/database";
-import Product from "@/lib/database/models/product.model";
- 
+import Product, { IProduct } from "@/lib/database/models/product.model";
+
 export async function getAllCategories() {
   await connectToDatabase();
   const categories = await Product.find({ isPublished: true }).distinct("category");
@@ -25,4 +25,14 @@ export async function getProductsForCard({ tag, limit = 4 }: { tag: string; limi
     href: string;
     image: string;
   }[];
+}
+export async function getProductsByTag({ tag, limit = 10 }: { tag: string; limit?: number }) {
+  await connectToDatabase();
+  const products = await Product.find({
+    tags: { $in: [tag] },
+    isPublished: true,
+  })
+    .sort({ createdAt: "desc" }) 
+    .limit(limit);
+  return JSON.parse(JSON.stringify(products)) as IProduct[];
 }
