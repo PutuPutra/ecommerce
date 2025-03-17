@@ -1,7 +1,7 @@
 "use server";
 
-import { connectToDatabase } from "@/lib/database";
-import Product, { IProduct } from "@/lib/database/models/product.model";
+import { connectToDatabase } from "../../lib/database";
+import Product, { IProduct } from "../../lib/database/models/product.model";
 import { PAGE_SIZE } from "../constants";
 
 export async function getAllCategories() {

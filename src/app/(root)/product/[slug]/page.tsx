@@ -1,11 +1,11 @@
-import { Separator } from "@/components/ui/separator";
-import Rating from "@/components/shared/product/rating";
-import { Card, CardContent } from "@/components/ui/card";
-import ProductPrice from "@/components/shared/product/product-price";
-import ProductSlider from "@/components/shared/product/product-slider";
-import SelectVariant from "@/components/shared/product/select-variant";
-import ProductGallery from "@/components/shared/product/product-gallery";
-import { getProductBySlug, getRelatedProductsByCategory } from "@/lib/actions/product.actions";
+import { Separator } from "../../../../components/ui/separator";
+import Rating from "../../../../components/shared/product/rating";
+import { Card, CardContent } from "../../../../components/ui/card";
+import ProductPrice from "../../../../components/shared/product/product-price";
+import ProductSlider from "../../../../components/shared/product/product-slider";
+import SelectVariant from "../../../../components/shared/product/select-variant";
+import ProductGallery from "../../../../components/shared/product/product-gallery";
+import { getProductBySlug, getRelatedProductsByCategory } from "../../../../lib/actions/product.actions";
 
 export async function generateMetadata(props: { params: Promise<{ slug: string }> }) {
   const params = await props.params;

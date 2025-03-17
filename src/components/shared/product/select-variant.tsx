@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { IProduct } from "@/lib/database/models/product.model";
+import { Button } from "../../../components/ui/button";
+import { IProduct } from "../../../lib/database/models/product.model";
 import Link from "next/link";
 
 export default function SelectVariant({
