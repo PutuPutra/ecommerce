@@ -1,7 +1,6 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from "react";
-import { ShoppingCartIcon, UserIcon } from "lucide-react";
 import Link from "next/link";
+import CartButton from "./cart-button";
 
 export default function menu() {
   return (
@@ -23,12 +22,13 @@ export default function menu() {
             <ShoppingCartIcon className="h-8 w-8" />
             <span className="font-bold">Cart</span>
           </Link> */}
-          <Link prefetch={false} href={"/cart"} className="header-button">
+          {/* <Link prefetch={false} href={"/cart"} className="header-button">
             <div className="flex items-end">
               <ShoppingCartIcon className="h-8 w-8" />
               Cart
             </div>
-          </Link>
+          </Link> */}
+          <CartButton />
         </nav>
       </div>
     </>
