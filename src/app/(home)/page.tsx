@@ -5,10 +5,11 @@ import {
   getAllCategories,
   getProductsByTag,
   getProductsForCard,
-} from "@/lib/actions/product.actions";
-import { toSlug } from "@/lib/utils";
-import ProductSlider from "@/components/shared/product/product-slider";
-import { Card, CardContent } from "@/components/ui/card";
+} from "../../lib/actions/product.actions";
+import { toSlug } from "../../lib/utils";
+import ProductSlider from "../../components/shared/product/product-slider";
+import { Card, CardContent } from "../../components/ui/card";
+import BrowsingHistoryList from "../../components/shared/browsing-history-list";
 
 export default async function Page() {
   const bestSellingProducts = await getProductsByTag({ tag: "best-seller" });
@@ -84,6 +85,9 @@ export default async function Page() {
             />
           </CardContent>
         </Card>
+      </div>
+      <div className="p-4 bg-background">
+        <BrowsingHistoryList />
       </div>
     </>
   );
