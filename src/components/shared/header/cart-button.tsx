@@ -4,14 +4,18 @@ import { ShoppingCartIcon } from "lucide-react";
 import Link from "next/link";
 import useIsMounted from "../../../hooks/use-is-mounted";
 import { cn } from "../../../lib/utils";
+import useCartSidebar from "@/hooks/use-cart-sidebar";
 import useCartStore from "../../../hooks/use-cart-store";
 
 export default function CartButton() {
   const isMounted = useIsMounted();
+  const isCartSidebarOpen = useCartSidebar();
   const {
     cart: { items },
   } = useCartStore();
+
   const cartItemsCount = items.reduce((a, c) => a + c.quantity, 0);
+
   return (
     <Link href="/cart" className="px-1 header-button">
       <div className="flex items-end text-xs relative">
@@ -26,6 +30,11 @@ export default function CartButton() {
           >
             {cartItemsCount}
           </span>
+        )}
+        {isCartSidebarOpen && (
+          <div
+            className={`absolute top-[20px] right-[-16px] rotate-[-90deg] z-10 w-0 h-0 border-l-[7px] border-r-[7px] border-b-[8px] border-transparent border-b-background`}
+          ></div>
         )}
         <span className="font-bold">Cart</span>
       </div>
