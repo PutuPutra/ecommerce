@@ -1,6 +1,6 @@
 import { HomeCarousel } from "../../components/shared/home/home-carousel";
 import { HomeCard } from "../../components/shared/home/home-card";
-import data from "../../lib/data";
+import { data } from "../../lib/data";
 import {
   getAllCategories,
   getProductsByTag,
