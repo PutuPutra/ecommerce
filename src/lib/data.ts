@@ -691,7 +691,7 @@ const products: IProductInput[] = [
   },
 ];
 
-const data: Data = {
+export const data: Data = {
   headerMenus: [
     {
       name: "Today's Deal",
@@ -750,6 +750,5 @@ const data: Data = {
     },
   ],
   products,
+  users: [],
 };
-
-export default data;
